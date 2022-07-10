@@ -19,7 +19,7 @@ let Astronaut = new mongoose.Astronaut({
       name: String,
       spacecraft: String,
       spacecraftImage: String
-    }
+    },
   image: String,
   bio: String,
 
