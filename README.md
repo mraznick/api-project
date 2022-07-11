@@ -26,3 +26,25 @@ let Astronaut = new mongoose.Astronaut({
 })
 
 _________
+
+CRUD functions (in controllers folder):
+
+_________
+
+* Create function:
+createAstronaut = add new astronaut to API
+
+
+* Read functions:
+getAstronauts = get request to find all astronauts
+
+getAstronaut = get request to find single astronaut by ID
+
+
+* Update function:
+updateAstronaut = update data for single astronaut by ID
+
+
+* Delete function:
+deleteAstronaut = remove single astronaut from API
+

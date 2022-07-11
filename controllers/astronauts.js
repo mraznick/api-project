@@ -46,6 +46,7 @@ export const updateAstronaut = async (req, res) => {
   res.status(200).json(character)
 };
 
+// function find find and delete individual astronaut by ID
 export const deleteAstronaut = async (req, res) => {
   try {
     const { id } = req.params;
