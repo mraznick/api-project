@@ -42,7 +42,7 @@ export const createAstronaut = async (req, res) => {
 // function to find and update individual astronaut data
 export const updateAstronaut = async (req, res) => {
   const { id } = req.params;
-  const character = await CharacterData.findByIdAndUpdate(id, req.body);
+  const character = await Astronaut.findByIdAndUpdate(id, req.body);
   res.status(200).json(character)
 };
 
