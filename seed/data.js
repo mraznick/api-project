@@ -1,17 +1,40 @@
 import db from "../db/connection.js";
 import Astronaut from "../models/astronaut.js";
-import Agency from "../models/agency.js";
-import astronauts from "./astronauts.json" assert {type: "json" };
-import agencies from "./agiencies.json" assert { type: "json" };
+import axios from "axios";
 
 const insertData = async () => {
+  try {
 
-  await db.dropDatabase();
+    await db.dropDatabase();
 
-  await Astronaut.insertMany(astronauts);
-  await Agency.insertMany(agencies);
+    const response = await axios.get('https://ll.thespacedevs.com/2.2.0/astronaut/?format=json&limit=100&offset=100')
 
-  db.close();
+    // store a variable astroData with filtered response;
+    // map through response;
+    // return an object that has info for my model
+
+    let astroData = response.data.results.map(element => {
+
+      return {
+        name: element.name,
+        nationality: element.nationality,
+        agency: {
+          agencyName: element.agency.name,
+          spacecraft: element.agency.spacecraft,
+          spacecraftImage: element.agency.image_url,
+        },
+        image: element.profile_image,
+        bio: element.bio,
+      }
+
+    })
+    // console.log(astroData)
+    await Astronaut.insertMany(astroData)
+
+    db.close();
+  } catch (error) {
+    console.log(error)
+  }
 
 }
 
