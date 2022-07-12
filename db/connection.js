@@ -1,7 +1,10 @@
 import mongoose from "mongoose";
 import chalk from "chalk";
 
-const MONGODB_URI = "mongodb://127.0.0.1:27017/astronaut-api"
+const connectionString = process.env.DB_URL ||
+'mongodb://127.0.0.1:27017/astronaut-api'
+
+const MONGODB_URI = connectionString 
 
 //allow updates to only return updated documents
 mongoose.set("returnOriginal", false)
