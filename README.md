@@ -1,4 +1,4 @@
-# api-project
+# API Project: Directory of Astronauts 2022
 _________
 
 ## API source:
