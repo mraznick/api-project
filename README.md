@@ -13,6 +13,10 @@ ___
 Ordered Parameters:   
 - 'name', 'status', 'nationality', 'agency.name', 'agency.spacecracft', 'agency.spacecraftImage', 'image', 'bio'  
 ___
+## Endpoints:
+___
+https://directory-of-astronauts-2022.herokuapp.com/api/astronauts
+___
 ## New Model:  
 _________
 ```javascript
